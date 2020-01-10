@@ -1,0 +1,171 @@
+
+/* TODO remove Learning Curve if don't end up using it */
+@font-face {
+    font-family: "Learning Curve";
+    src: url("lib/learning_curve_regular_ot_tt-webfont.woff") format('woff');
+}
+
+body {
+	/*background: #7ad4fd;*/
+	font-family: 'Helvetica Nue', sans-serif;
+	font-weight: 100;
+}
+
+.section {
+	margin: auto;
+  margin-top: 40px;
+}
+.section:nth-child(1) {
+	margin-top: 2em;
+}
+/* Switch to a one-column layout on <700px screens */
+@media only screen and (max-width: 700px) {
+	.header {
+		margin-left: 0;
+		margin: auto;
+    width: 90%;
+	}
+	.main-and-nav {
+		flex-direction: column;
+		width: 90%;
+	}
+}
+/* Move navigation bar to the left of main on >700px screens */
+@media only screen and (min-width: 700px) {
+	.header { 
+		margin-left: 20%;
+		margin-bottom: 1em;
+	}
+	.main-and-nav {
+  	flex-direction: row;
+  	width: 60%;
+  }
+  .nav-bar {
+  	align-items: flex-end;
+  }
+}
+.page-title {
+	margin-top: 20%;
+	margin-bottom: 0;
+	font-family: 'Quicksand';
+	font-size: 2em;
+	font-weight: 100;
+	letter-spacing: .2em;
+}
+.tagline {
+	margin-top: 5px;
+	font-family: 'Bad Script', 'Learning Curve', serif;
+	font-style: italic;
+	letter-spacing: .1em;
+	font-size: 1.2em;
+}
+.main-and-nav {
+	display: flex;
+	margin-top: 3em;
+	margin: auto;
+}
+.nav-bar {
+	display: flex;
+	flex-direction: column;
+  line-height: 1.4;
+  margin-top: 2em;
+  margin-right: 2em;
+  min-width: 4em;
+}
+.nav-link>a {
+	text-decoration: none;
+	letter-spacing: .1em;
+  line-height: 1.7;
+}
+.main {
+	display: flex;
+	flex-direction: column;
+}
+.section-title {
+	font-weight: 900;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-family: 'Quicksand', 'Learning Curve', 'Bad Script';
+	font-size: 1.7em;
+}
+p {
+  letter-spacing: .02em;
+  line-height: 1.5;
+  font-family: 'Quicksand';
+}
+
+a {
+	/*font-weight: bold;*/
+	border-bottom: 1px solid;
+  text-decoration: none;
+}
+a:link {
+	color: #03a9f4;
+}
+a:visited {
+	color: #03a9f4; /*#ff225e;*/
+}
+
+.icon-links > a {
+	border-bottom: 0;
+  text-decoration: none;
+  padding: 0 .2em;
+}
+.icon-links > a:link {
+  color: black;
+}
+.icon-links > a:visited {
+  color: black;
+}
+
+a:hover, .icon-links > a:hover {
+	color: #ff225e; /*orange;*/
+}
+
+.project {
+	margin: 2em 0;
+}
+.project-name, .project-links, .project-desc {
+	margin: .4em 0;
+}
+.project-links {
+	font-family: serif;
+	font-size: 1.1em;
+}
+.project-links>a:link, .project-links>a:visited {
+	color: #00bcd4;
+	font-style: italic;
+}
+.project-links>a:hover {
+	color: #ff225e;
+}
+
+.publication {
+	margin: 1.5em 0;
+}
+.publication>p {
+	margin: 0;
+}
+.publication>.title {
+	font-size: 1.1em;
+	font-weight: 800;
+}
+.publication>.venue {
+	font-family: sans-serif;
+	color: #696969;
+}
+.publication>.note {
+	font-family: 'Garamond', serif;
+	font-style: italic;
+	color: #afafaf;
+}
+.publication>.note>a:link {
+	font-weight: normal;
+	color: #00bcd4;
+}
+.publication>.note>a:visited {
+	color: #00bcd4;
+}
+.publication>.note>a:hover {
+	color: #ff225e; /*orange;*/
+}
