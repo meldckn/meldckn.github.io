@@ -15,14 +15,16 @@ body {
 	margin: auto;
   margin-top: 40px;
 }
-.section:nth-child(1) {
+/*.section:nth-child(1) {
 	margin-top: 2em;
-}
+}*/
+
 /* Switch to a one-column layout on <700px screens */
 @media only screen and (max-width: 700px) {
 	.header {
-		margin-left: 0;
-		margin: auto;
+		margin-top: 15%;
+		/*margin-left: 0;
+		margin: auto;*/
     width: 90%;
 	}
 	.main-and-nav {
@@ -33,6 +35,7 @@ body {
 /* Move navigation bar to the left of main on >700px screens */
 @media only screen and (min-width: 700px) {
 	.header { 
+		margin-top: 15%;
 		margin-left: 20%;
 		margin-bottom: 1em;
 	}
@@ -45,7 +48,7 @@ body {
   }
 }
 .page-title {
-	margin-top: 20%;
+	margin-top: .4;
 	margin-bottom: 0;
 	font-family: 'Quicksand';
 	font-size: 2em;
