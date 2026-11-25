@@ -35,7 +35,7 @@ PIECES = [
     ("column", "Column", "main", "column", ["column-"]),
     ("fingerprint-iv", "Fingerprint IV", "main", "fingerpint4", []),
     ("a-study-of-eyes", "A Study of Eyes", "main", "astudyofeyes", ["eyes-"]),
-    ("bomb", "Bomb", "main", "spikes", []),
+    ("starburst", "Starburst", "main", "spikes", []),
     # Gallery-only card that links to fingerprint-iv (see its index.md).
     ("fingerprint-iv-panel", "Fingerprint IV", "main", "fingerprint4-2", []),
     ("fingerprint-iii", "Fingerprint III", "main", "fingerprint3", ["fingerprint3-"]),

@@ -7,9 +7,9 @@ section: main
 order: 15
 cover: cover.jpg
 media:
-  - woodrabbit-2.jpg
-  - woodrabbit-3.jpg
   - woodrabbit-4.jpg
   - woodrabbit-5.jpg
   - woodrabbit-7.jpg
+  - woodrabbit-3.jpg
+  - woodrabbit-2.jpg
 ---

@@ -7,9 +7,9 @@ section: large
 order: 20
 cover: cover.jpg
 media:
-  - cullytortoise-2.jpg
+  - cullyturtle-repaint.jpg
   - cullytortoise-3.jpg
   - cullytortoise-4.jpg
-  - cullyturtle-repaint.jpg
+  - cullytortoise-2.jpg
 ---
 
