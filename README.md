@@ -58,4 +58,3 @@ That copies web-sized versions of each piece's cover (from `Main Gallery`) and e
 
 `.github/workflows/deploy.yml` builds and publishes to GitHub Pages on every push to `main` (enable Pages → "GitHub Actions" in the repo settings). To use a custom domain, add a `src/CNAME` file containing the domain.
 
-`mockups/` holds the early design previews and isn't part of the site.
