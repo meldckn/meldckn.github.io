@@ -7,6 +7,5 @@ section: main
 order: 2
 cover: cover.jpg
 media:
-  - drip1-2.jpg
   - drip1-3.jpg
 ---

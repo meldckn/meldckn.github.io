@@ -11,7 +11,5 @@ media:
   - woodrabbit-3.jpg
   - woodrabbit-4.jpg
   - woodrabbit-5.jpg
-  - woodrabbit-6.jpg
   - woodrabbit-7.jpg
-  - woodrabbit-8.jpg
 ---

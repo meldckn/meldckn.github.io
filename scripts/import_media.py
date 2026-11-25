@@ -48,7 +48,7 @@ PIECES = [
     ("root", "Root", "main", "carrot", []),
     ("crow", "Crow", "main", "crow", []),
     ("bone-spoon", "Bone Spoon", "main", "bonespoon", ["bonespoon-"]),
-    ("footed-i", "Footed I", "main", "footed1-3", ["footed2"]),
+    ("footed-i", "Footed I", "main", "footed2-3", ["footed2."]),
     ("footed-ii", "Footed II", "main", "footed1-2", ["footed1."]),
     ("cully-turtle", "Cully Turtle", "large", "cullyturtle-repaint",
      ["cullyturtle-repaint", "cullytortoise-"]),
