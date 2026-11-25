@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title and page.url != "/" %}{{ title }} — {% endif %}{{ site.name }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <meta property="og:title" content="{{ title or site.name }}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <link rel="icon" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css">
+  <script>document.documentElement.classList.add("js")</script>
+  <script src="/assets/site.js" defer></script>
+</head>
+<body class="{{ bodyClass }}">
+  <header class="site-header">
+    <a class="site-name" href="/">{{ site.name }}</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/" {% if page.url == "/" or page.url.startsWith("/work/") %}aria-current="page"{% endif %}>Work</a>
+      <a href="/about/" {% if page.url == "/about/" %}aria-current="page"{% endif %}>About</a>
+      <a href="/about/#contact">Contact</a>
+    </nav>
+  </header>
+  <main id="main">
+    {{ content | safe }}
+  </main>
+  <footer class="site-footer">
+    <span>&copy; {{ year }} {{ site.name }}</span>
+  </footer>
+</body>
+</html>

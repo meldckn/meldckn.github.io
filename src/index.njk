@@ -1,0 +1,26 @@
+---
+layout: base.njk
+title: Work
+bodyClass: page-gallery
+---
+{% for section in site.sections %}
+{% set pieces = collections.pieces | inSection(section.key) %}
+{% if pieces.length %}
+<section class="gallery-section" {% if section.heading %}aria-labelledby="sec-{{ section.key }}"{% else %}aria-label="Work"{% endif %}>
+  {% if section.heading %}<h2 class="section-heading" id="sec-{{ section.key }}">{{ section.heading }}</h2>{% endif %}
+  <div class="masonry" data-masonry>
+    {% for piece in pieces %}
+    <a class="card" href="{{ piece.url }}">
+      <div class="card-media">
+        {% image piece.data.dir + "/" + piece.data.cover, piece.data.title, "(min-width: 1100px) 31vw, (min-width: 640px) 46vw, 92vw", { style: "view-transition-name: piece-" + piece.data.slug, eager: loop.index0 < 6 and section.key == "main" } %}
+      </div>
+      <span class="card-caption">
+        <span class="card-title">{{ piece.data.title }}</span>
+        {% if piece.data.year %}<span class="card-year">{{ piece.data.year }}</span>{% endif %}
+      </span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+{% endfor %}

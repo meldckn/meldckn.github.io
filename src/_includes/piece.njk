@@ -1,0 +1,55 @@
+---
+layout: base.njk
+bodyClass: page-piece
+---
+{%- set all = collections.pieces -%}
+{%- set idx = -1 -%}
+{%- for p in all %}{% if p.url == page.url %}{% set idx = loop.index0 %}{% endif %}{% endfor -%}
+{%- set prev = all[idx - 1] if idx > 0 else null -%}
+{%- set next = all[idx + 1] if idx < all.length - 1 else null -%}
+
+<article class="piece">
+  <div class="piece-info">
+    <a class="back-link" href="/">&larr; All work</a>
+    <h1 class="piece-title">{{ title }}</h1>
+    {% if year or materials or dimensions %}
+    <dl class="piece-meta">
+      {% if year %}<div><dt>Year</dt><dd>{{ year }}</dd></div>{% endif %}
+      {% if materials %}<div><dt>Materials</dt><dd>{{ materials }}</dd></div>{% endif %}
+      {% if dimensions %}<div><dt>Size</dt><dd>{{ dimensions }}</dd></div>{% endif %}
+    </dl>
+    {% endif %}
+    <div class="piece-text">{{ content | safe }}</div>
+  </div>
+
+  <div class="piece-media">
+    <figure class="media-item">
+      <button class="zoom" type="button" data-full="{% imageFull dir + '/' + cover %}" aria-label="View {{ title }} larger">
+        {% image dir + "/" + cover, title, "(min-width: 960px) 62vw, 92vw", { style: "view-transition-name: piece-" + slug, eager: true } %}
+      </button>
+    </figure>
+    {% for file in media %}
+    <figure class="media-item">
+      {% if file | isVideo %}
+      <video controls playsinline preload="metadata" poster="/{{ dir }}/{{ file | posterFor }}">
+        <source src="/{{ dir }}/{{ file }}" type="video/mp4">
+      </video>
+      {% else %}
+      <button class="zoom" type="button" data-full="{% imageFull dir + '/' + file %}" aria-label="View photo {{ loop.index + 1 }} of {{ title }} larger">
+        {% image dir + "/" + file, title + ", photo " + (loop.index + 1), "(min-width: 960px) 62vw, 92vw" %}
+      </button>
+      {% endif %}
+    </figure>
+    {% endfor %}
+  </div>
+</article>
+
+<nav class="piece-nav" aria-label="More work">
+  {% if prev %}<a class="prev" href="{{ prev.url }}"><span>Previous</span>{{ prev.data.title }}</a>{% else %}<span></span>{% endif %}
+  {% if next %}<a class="next" href="{{ next.url }}"><span>Next</span>{{ next.data.title }}</a>{% endif %}
+</nav>
+
+<dialog class="lightbox" aria-label="Enlarged photo">
+  <img alt="">
+  <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
+</dialog>
