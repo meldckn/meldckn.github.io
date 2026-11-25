@@ -8,6 +8,7 @@ order: 1
 cover: cover.jpg
 media:
   - fingerprint1-2.jpg
+  - fingerprint1-3.jpg
 ---
 
 The first in a series of "fingerprints" – carvings that follow the grain of the wood, and try to capture and translate its complex motion and record of life, growth, and change in 3D relief.
