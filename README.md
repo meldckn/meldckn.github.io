@@ -56,5 +56,5 @@ That copies web-sized versions of each piece's cover (from `Main Gallery`) and e
 
 ## Publishing
 
-`.github/workflows/deploy.yml` builds and publishes to GitHub Pages on every push to `main` (enable Pages → "GitHub Actions" in the repo settings). To use a custom domain, add a `src/CNAME` file containing the domain.
+`.github/workflows/deploy.yml` builds and publishes to GitHub Pages on every push to `master` (Pages source: "GitHub Actions"). `src/CNAME` sets the domain (www.melaniedickinson.com). Pages kept from the old site (`/games.html`, `/asp.html`, `/publications/`) live in `src/games/` and are copied to the site root as-is.
 
