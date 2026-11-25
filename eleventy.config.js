@@ -46,6 +46,10 @@ export default function (eleventyConfig) {
     [`src/favicons/${FAVICON}/apple-touch-icon.png`]: "apple-touch-icon.png",
   });
   eleventyConfig.addPassthroughCopy("src/CNAME");
+  // Pages kept from the old site (old home page is now /games.html), copied
+  // as-is to the site root so /asp.html and /publications/... keep their URLs.
+  eleventyConfig.ignores.add("src/games/**");
+  eleventyConfig.addPassthroughCopy({ "src/games": "/" });
   // Videos and their poster frames are served as-is next to each piece page.
   eleventyConfig.addPassthroughCopy("src/work/**/*.{mp4,mov,webm}");
   eleventyConfig.addPassthroughCopy("src/work/**/*-poster.jpg");
