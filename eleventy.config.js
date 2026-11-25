@@ -38,7 +38,13 @@ async function imageFull(src) {
 
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
-  eleventyConfig.addPassthroughCopy("src/favicon.png");
+  // Favicon: pick a set from src/favicons/ ("cloud-i" or "textured").
+  const FAVICON = "cloud-i";
+  eleventyConfig.addPassthroughCopy({
+    [`src/favicons/${FAVICON}/favicon.ico`]: "favicon.ico",
+    [`src/favicons/${FAVICON}/favicon.png`]: "favicon.png",
+    [`src/favicons/${FAVICON}/apple-touch-icon.png`]: "apple-touch-icon.png",
+  });
   eleventyConfig.addPassthroughCopy("src/CNAME");
   // Videos and their poster frames are served as-is next to each piece page.
   eleventyConfig.addPassthroughCopy("src/work/**/*.{mp4,mov,webm}");

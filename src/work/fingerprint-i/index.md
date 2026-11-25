@@ -10,4 +10,4 @@ media:
   - fingerprint1-2.jpg
 ---
 
-The first in a series of "fingerprints" – carvings that follow the grain of the wood, and try to capture and translate its complex motion in 3D relief.
+The first in a series of "fingerprints" – carvings that follow the grain of the wood, and try to capture and translate its complex motion and record of life, growth, and change in 3D relief.
