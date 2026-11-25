@@ -11,5 +11,3 @@ media:
   - fingerprint3-3.jpg
   - fingerprint3-4.jpg
 ---
-
-A few sentences about this piece go here.

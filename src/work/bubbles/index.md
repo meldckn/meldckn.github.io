@@ -2,7 +2,7 @@
 title: "Bubbles"
 year: 2025
 materials: Concrete, papercrete, recycled metal and plastic stool, flower pot, recycled insulation foam
-dimensions:
+dimensions: "2.5 × 2.5 × 3 ft (75 × 75 × 90 cm)"
 section: large
 order: 24
 cover: cover.jpg

@@ -127,7 +127,6 @@ button { font: inherit; color: inherit; }
   font-size: 14px;
 }
 .card-title { color: #333; transition: color .3s var(--ease); }
-.card-year { color: #aaa; }
 
 /* Gentle fade-up as cards scroll into view (JS only, motion-safe). */
 @media (prefers-reduced-motion: no-preference) {
@@ -341,11 +340,10 @@ button { font: inherit; color: inherit; }
 .page-title { margin: 0 0 28px; font-size: clamp(26px, 2.6vw, 34px); font-weight: 300; }
 .about-text { font-size: 17px; color: var(--ink-soft); margin-bottom: 56px; }
 .about-text p { margin: 0 0 1em; }
-.contact-label { display: block; margin-bottom: 14px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
-.contact-list { list-style: none; margin: 0; padding: 0; font-size: 15px; }
-.contact-list li { padding: 4px 0; }
-.contact-list a { border-bottom: 1px solid var(--rule); transition: border-color .3s var(--ease); }
-.contact-list a:hover { border-color: var(--ink); }
+.contact-icons { list-style: none; margin: 32px 0 0; padding: 0; display: flex; gap: 2px; margin-left: -11px; }
+.contact-icons a { display: grid; place-items: center; width: 44px; height: 44px; color: var(--ink); transition: opacity .3s var(--ease); }
+/* Hovering one icon fades the others. */
+.contact-icons:hover a:not(:hover), .contact-icons:focus-within a:not(:focus-visible) { opacity: .3; }
 @media (max-width: 799px) {
   .about { grid-template-columns: 1fr; }
   .about-photo-placeholder { height: 50vh; }

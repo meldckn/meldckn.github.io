@@ -30,22 +30,22 @@ MAX_PX = 2400  # long edge of stored masters; the build makes smaller sizes
 # Order here is the gallery order.
 PIECES = [
     ("fingerprint-i", "Fingerprint I", "main", "fingerprint1", ["fingerprint1-"]),
-    ("drip-i", "Drip I", "main", "drip1", ["drip1-"]),
+    ("cloud-i", "Cloud I", "main", "drip1", ["drip1-"]),
     ("starfield", "Starfield", "main", "starfield", []),
     ("column", "Column", "main", "column", ["column-"]),
     ("fingerprint-iv", "Fingerprint IV", "main", "fingerpint4", []),
     ("a-study-of-eyes", "A Study of Eyes", "main", "astudyofeyes", ["eyes-"]),
-    ("spikes", "Spikes", "main", "spikes", []),
+    ("bomb", "Bomb", "main", "spikes", []),
     # Gallery-only card that links to fingerprint-iv (see its index.md).
     ("fingerprint-iv-panel", "Fingerprint IV", "main", "fingerprint4-2", []),
     ("fingerprint-iii", "Fingerprint III", "main", "fingerprint3", ["fingerprint3-"]),
     ("wave", "Wave", "main", "wave", []),
     ("spiderweb", "Spiderweb", "main", "spiderweb-3", ["spiderweb"]),
-    ("fingers", "Fingers", "main", "fingers", ["fingers-"]),
+    ("reaching", "Reaching", "main", "fingers", ["fingers-"]),
     ("fingerprint-v", "Fingerprint V", "main", "fingerprint5", []),
-    ("drip-ii", "Drip II", "main", "drip2-2", ["drip2"]),
-    ("wood-rabbit", "Wood Rabbit", "main", "woodrabbit", ["woodrabbit-"]),
-    ("carrot", "Carrot", "main", "carrot", []),
+    ("cloud-ii", "Cloud II", "main", "drip2-2", ["drip2"]),
+    ("leap", "Leap", "main", "woodrabbit", ["woodrabbit-"]),
+    ("root", "Root", "main", "carrot", []),
     ("crow", "Crow", "main", "crow", []),
     ("bone-spoon", "Bone Spoon", "main", "bonespoon", ["bonespoon-"]),
     ("footed-i", "Footed I", "main", "footed1-3", ["footed2"]),
@@ -163,8 +163,6 @@ cover: {media[0]}
 media:
 {media_yaml}
 ---
-
-A few sentences about this piece go here.
 """.replace("media:\n  []", "media: []"))
         print(f"✓ {slug}: {len(media)} file(s)")
 

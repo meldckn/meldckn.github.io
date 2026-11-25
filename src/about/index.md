@@ -6,10 +6,16 @@ permalink: /about/
 # Put a photo in this folder (src/about/) and set its file name here.
 photo: photo.jpg
 contact:
-  - label: meldckn@gmail.com
+  - label: Email
+    icon: email
     url: mailto:meldckn@gmail.com
   - label: Instagram
+    icon: instagram
     url: https://www.instagram.com/meldckn/
 ---
 
-Melanie Dickinson is an artist working in wood and concrete: carved relief panels, small sculptures and functional objects, and large outdoor play sculptures made together with the community.
+Melanie is an artist and sculptor with a 15-year practice in woodcarving, with a recent shift into large-scale public art making. 
+
+At the carving bench, she spends weeks with a single block of walnut or maple, coaxing out ripples, drips, and whorls, into faintly bodily forms, so the grain seems to move. She traces shapes intuitively so solid hardwood is made to look soft, liquid, and alive.
+
+Out in the world, she builds climbable play sculptures out of concrete, papercrete, and salvaged materials, shaped together with the people and communities they're made for. Both come from the same place: a love of forms that ask to be touched, and of art and making as a way to connect with people.

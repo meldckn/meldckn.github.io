@@ -2,7 +2,7 @@
 title: "Fingerprint I"
 year: 2016
 materials: Walnut
-dimensions:
+dimensions: 7 × 14 inches (18 × 36 cm)
 section: main
 order: 1
 cover: cover.jpg
@@ -10,4 +10,4 @@ media:
   - fingerprint1-2.jpg
 ---
 
-A few sentences about this piece go here.
+The first in a series of "fingerprints" – carvings that follow the grain of the wood, and try to capture and translate its complex motion in 3D relief.

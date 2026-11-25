@@ -1,5 +1,5 @@
 ---
-title: "Drip I"
+title: "Cloud I"
 year: 2017
 materials: Maple
 dimensions:
@@ -9,7 +9,4 @@ cover: cover.jpg
 media:
   - drip1-2.jpg
   - drip1-3.jpg
-  - drip1-4.jpg
 ---
-
-A few sentences about this piece go here.

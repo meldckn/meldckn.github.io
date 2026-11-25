@@ -9,5 +9,3 @@ cover: cover.jpg
 media:
   - bonespoon-2.jpg
 ---
-
-A few sentences about this piece go here.

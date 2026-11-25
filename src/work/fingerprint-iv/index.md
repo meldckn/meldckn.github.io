@@ -9,5 +9,3 @@ cover: cover.jpg
 media:
   - panel.jpg
 ---
-
-A few sentences about this piece go here.

@@ -21,7 +21,7 @@ bodyClass: page-piece
     <div class="piece-info">
       <a class="back-link" href="/">&larr; All work</a>
       <h1 class="piece-title">{{ title }}</h1>
-      <div class="piece-text">{{ content | safe }}</div>
+      {% if content | trim %}<div class="piece-text">{{ content | safe }}</div>{% endif %}
       <dl class="piece-meta">
         <div><dt>Year</dt><dd>{{ year or "—" }}</dd></div>
         <div><dt>Materials</dt><dd>{{ materials or "—" }}</dd></div>

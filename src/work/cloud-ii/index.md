@@ -1,5 +1,5 @@
 ---
-title: "Drip II"
+title: "Cloud II"
 year: 2021
 materials: Maple
 dimensions:
@@ -12,5 +12,3 @@ media:
   - drip2-5.jpg
   - drip2.jpg
 ---
-
-A few sentences about this piece go here.

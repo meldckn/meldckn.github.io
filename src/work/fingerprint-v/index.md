@@ -8,5 +8,3 @@ order: 13
 cover: cover.jpg
 media: []
 ---
-
-A few sentences about this piece go here.

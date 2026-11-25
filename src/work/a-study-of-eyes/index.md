@@ -10,5 +10,3 @@ media:
   - eyes-2.jpg
   - eyes-3.jpg
 ---
-
-A few sentences about this piece go here.

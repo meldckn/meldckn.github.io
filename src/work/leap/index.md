@@ -1,8 +1,8 @@
 ---
-title: "Wood Rabbit"
+title: "Leap"
 year: 2020
 materials: Maple
-dimensions:
+dimensions: "2 × 0.75 × 1.75 inches (5 × 2 × 4.5 cm)"
 section: main
 order: 15
 cover: cover.jpg
@@ -15,5 +15,3 @@ media:
   - woodrabbit-7.jpg
   - woodrabbit-8.jpg
 ---
-
-A few sentences about this piece go here.

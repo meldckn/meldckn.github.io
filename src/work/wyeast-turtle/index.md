@@ -2,7 +2,7 @@
 title: "Wy'east Turtle"
 year: 2025
 materials: Concrete, papercrete, stabilized eart, urbanite, rebar
-dimensions:
+dimensions: "6 × 3.5 × 3 ft (180 × 105 × 90 cm)"
 section: large
 order: 22
 cover: cover.jpg
@@ -13,5 +13,3 @@ media:
   - wyeastturtle-5.jpg
   - wyeastturtle-6.jpg
 ---
-
-A few sentences about this piece go here.
