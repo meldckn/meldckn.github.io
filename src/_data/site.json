@@ -3,6 +3,6 @@
   "description": "Sculpture and wood carving by Melanie Dickinson.",
   "sections": [
     { "key": "main", "heading": "" },
-    { "key": "large", "heading": "Large Sculptures" }
+    { "key": "large", "heading": "Play Sculptures", "id": "play-sculptures" }
   ]
 }

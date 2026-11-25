@@ -1,7 +1,7 @@
 ---
 title: "Fingerprint III"
-year:
-materials:
+year: 2024
+materials: Walnut
 dimensions:
 section: main
 order: 9

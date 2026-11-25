@@ -1,7 +1,7 @@
 ---
 title: "Drip I"
-year:
-materials:
+year: 2017
+materials: Maple
 dimensions:
 section: main
 order: 2

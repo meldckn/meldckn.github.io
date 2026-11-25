@@ -1,7 +1,7 @@
 ---
 title: "Fingers"
-year:
-materials:
+year: 2025
+materials: Walnut
 dimensions:
 section: main
 order: 12

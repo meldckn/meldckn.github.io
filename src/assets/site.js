@@ -42,7 +42,7 @@ function initMasonry() {
 
 // ---- Gentle fade-up as things scroll into view ----
 function initReveal() {
-  const items = document.querySelectorAll(".card, .media-item");
+  const items = document.querySelectorAll(".card, .piece-hero, .piece-info, .rail-wrap");
   if (!("IntersectionObserver" in window)) return;
   const io = new IntersectionObserver((entries) => {
     for (const e of entries) {
@@ -59,25 +59,81 @@ function initReveal() {
   });
 }
 
-// ---- Lightbox for piece photos ----
+// ---- Carousel of smaller photos: arrow buttons ----
+function initRails() {
+  document.querySelectorAll(".rail-wrap").forEach((wrap) => {
+    const rail = wrap.querySelector(".rail");
+    const back = wrap.querySelector(".rail-prev");
+    const fwd = wrap.querySelector(".rail-next");
+    const update = () => {
+      const max = rail.scrollWidth - rail.clientWidth;
+      back.hidden = rail.scrollLeft <= 4;
+      fwd.hidden = rail.scrollLeft >= max - 4;
+    };
+    [back, fwd].forEach((btn) => btn.addEventListener("click", () => {
+      rail.scrollBy({ left: Number(btn.dataset.dir) * rail.clientWidth * 0.75, behavior: "smooth" });
+    }));
+    rail.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update, { passive: true });
+    rail.querySelectorAll("img").forEach((img) => img.addEventListener("load", update));
+    update();
+  });
+}
+
+// ---- Lightbox: every photo/video on a piece page, with prev/next ----
 function initLightbox() {
   const dialog = document.querySelector(".lightbox");
   if (!dialog || typeof dialog.showModal !== "function") return;
-  const img = dialog.querySelector("img");
-  document.querySelectorAll(".zoom").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const thumb = btn.querySelector("img");
-      img.src = btn.dataset.full;
-      img.alt = thumb?.alt || "";
-      dialog.showModal();
-    });
+  const stage = dialog.querySelector(".lightbox-stage");
+  const count = dialog.querySelector(".lightbox-count");
+  // The main photo first, then everything in the carousel.
+  const buttons = [...document.querySelectorAll(".hero-btn, .rail-item")];
+  const items = buttons.map((btn) => ({
+    btn,
+    video: btn.dataset.video,
+    poster: btn.dataset.poster,
+    alt: btn.querySelector("img")?.alt || "",
+  }));
+  let current = 0;
+  dialog.classList.toggle("single", items.length < 2);
+
+  function show(i) {
+    current = (i + items.length) % items.length;
+    const item = items[current];
+    let el;
+    if (item.video) {
+      el = document.createElement("video");
+      el.src = item.video;
+      el.poster = item.poster || "";
+      el.controls = true;
+      el.playsInline = true;
+      el.autoplay = true;
+    } else {
+      el = document.createElement("img");
+      el.src = item.btn.dataset.full;
+      el.alt = item.alt;
+    }
+    stage.replaceChildren(el);
+    count.textContent = `${current + 1} / ${items.length}`;
+  }
+  const open = (i) => { show(i); dialog.showModal(); };
+
+  items.forEach((item, i) => item.btn.addEventListener("click", () => open(i)));
+  dialog.querySelector(".lightbox-prev").addEventListener("click", () => show(current - 1));
+  dialog.querySelector(".lightbox-next").addEventListener("click", () => show(current + 1));
+  dialog.querySelector(".lightbox-close").addEventListener("click", () => dialog.close());
+  // Clicking the empty area around the photo closes it.
+  dialog.addEventListener("click", (e) => { if (e.target === dialog || e.target === stage) dialog.close(); });
+  dialog.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") show(current - 1);
+    if (e.key === "ArrowRight") show(current + 1);
   });
-  dialog.addEventListener("click", () => dialog.close());
-  dialog.addEventListener("close", () => { img.removeAttribute("src"); });
+  dialog.addEventListener("close", () => { stage.replaceChildren(); });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   initMasonry();
   initReveal();
+  initRails();
   initLightbox();
 });

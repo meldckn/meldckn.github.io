@@ -1,7 +1,7 @@
 ---
 title: "Starfield"
-year:
-materials:
+year: 2026
+materials: Maple
 dimensions:
 section: main
 order: 3

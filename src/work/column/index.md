@@ -1,7 +1,7 @@
 ---
 title: "Column"
-year:
-materials:
+year: 2018
+materials: Charred alder
 dimensions:
 section: main
 order: 4

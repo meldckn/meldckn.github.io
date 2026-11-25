@@ -1,7 +1,7 @@
 ---
 title: "Fingerprint I"
-year:
-materials:
+year: 2016
+materials: Walnut
 dimensions:
 section: main
 order: 1

@@ -6,11 +6,16 @@ bodyClass: page-gallery
 {% for section in site.sections %}
 {% set pieces = collections.pieces | inSection(section.key) %}
 {% if pieces.length %}
-<section class="gallery-section" {% if section.heading %}aria-labelledby="sec-{{ section.key }}"{% else %}aria-label="Work"{% endif %}>
-  {% if section.heading %}<h2 class="section-heading" id="sec-{{ section.key }}">{{ section.heading }}</h2>{% endif %}
+{% set sectionId = section.id or ("sec-" + section.key) %}
+<section class="gallery-section" {% if section.heading %}id="{{ sectionId }}" aria-labelledby="{{ sectionId }}-heading"{% else %}aria-label="Work"{% endif %}>
+  {% if section.heading %}
+  <h2 class="section-heading" id="{{ sectionId }}-heading">
+    {{ section.heading }}<a class="anchor-link" href="#{{ sectionId }}" aria-label="Link to {{ section.heading }}">#</a>
+  </h2>
+  {% endif %}
   <div class="masonry" data-masonry>
     {% for piece in pieces %}
-    <a class="card" href="{{ piece.url }}">
+    <a class="card" href="{{ ('/work/' + piece.data.linkTo + '/') if piece.data.linkTo else piece.url }}">
       <div class="card-media">
         {% image piece.data.dir + "/" + piece.data.cover, piece.data.title, "(min-width: 1100px) 31vw, (min-width: 640px) 46vw, 92vw", { style: "view-transition-name: piece-" + piece.data.slug, eager: loop.index0 < 6 and section.key == "main" } %}
       </div>

@@ -1,3 +1,4 @@
+import fs from "node:fs";
 import path from "node:path";
 import Image from "@11ty/eleventy-img";
 
@@ -46,15 +47,20 @@ export default function (eleventyConfig) {
   eleventyConfig.addAsyncShortcode("image", image);
   eleventyConfig.addAsyncShortcode("imageFull", imageFull);
 
+  eleventyConfig.addFilter("srcExists", (file) => fs.existsSync(path.join("src", file)));
   eleventyConfig.addFilter("isVideo", (file) => /\.(mp4|mov|webm)$/i.test(file));
   eleventyConfig.addFilter("posterFor", (file) => file.replace(/\.[^.]+$/, "-poster.jpg"));
   eleventyConfig.addFilter("inSection", (pieces, section) =>
     pieces.filter((p) => p.data.section === section));
 
-  eleventyConfig.addCollection("pieces", (api) =>
+  const pieces = (api) =>
     api.getFilteredByGlob("src/work/*/index.md")
       .filter((p) => !p.data.hidden)
-      .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999)));
+      .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999));
+  eleventyConfig.addCollection("pieces", pieces);
+  // Pieces with a page of their own (for Previous / Next links).
+  eleventyConfig.addCollection("piecePages", (api) =>
+    pieces(api).filter((p) => !p.data.linkTo));
 
   eleventyConfig.setServerOptions({ showAllHosts: false });
 

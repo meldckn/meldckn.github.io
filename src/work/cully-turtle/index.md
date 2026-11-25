@@ -1,7 +1,7 @@
 ---
 title: "Cully Turtle"
-year:
-materials:
+year: 2025
+materials: Concrete, papercrete, rebar, recycled styrofoam
 dimensions:
 section: large
 order: 20
@@ -13,4 +13,3 @@ media:
   - cullyturtle-repaint.jpg
 ---
 
-A few sentences about this piece go here.

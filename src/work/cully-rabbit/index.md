@@ -1,7 +1,7 @@
 ---
 title: "Cully Rabbit"
-year:
-materials:
+year: 2026
+materials: Concrete, papercrete, structural steel, rebar
 dimensions:
 section: large
 order: 23
@@ -13,4 +13,3 @@ media:
   - cullyrabbit.jpg
 ---
 
-A few sentences about this piece go here.

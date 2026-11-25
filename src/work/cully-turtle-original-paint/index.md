@@ -1,7 +1,7 @@
 ---
 title: "Cully Turtle (original paint)"
-year:
-materials:
+year: 2025
+materials: Concrete, papercrete, rebar, recycled styrofoam
 dimensions:
 section: large
 order: 21
@@ -10,4 +10,3 @@ media:
   - cullyturtle-originalpaint-2.jpg
 ---
 
-A few sentences about this piece go here.

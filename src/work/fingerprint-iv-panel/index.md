@@ -1,12 +1,10 @@
 ---
+# Gallery-only card: shows this photo in the gallery but links to the
+# Fingerprint IV page instead of having a page of its own.
 title: "Fingerprint IV"
-year:
-materials:
-dimensions:
+linkTo: fingerprint-iv
+layout: false
 section: main
 order: 8
 cover: cover.jpg
-media: []
 ---
-
-A few sentences about this piece go here.

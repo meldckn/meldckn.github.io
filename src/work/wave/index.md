@@ -1,7 +1,7 @@
 ---
 title: "Wave"
-year:
-materials:
+year: 2011
+materials: Welded nails
 dimensions:
 section: main
 order: 10

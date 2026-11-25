@@ -1,7 +1,7 @@
 ---
 title: "Fingerprint V"
-year:
-materials:
+year: 2017
+materials: Walnut
 dimensions:
 section: main
 order: 13

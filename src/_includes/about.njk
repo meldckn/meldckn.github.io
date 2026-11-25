@@ -1,0 +1,21 @@
+---
+layout: base.njk
+---
+<div class="about">
+  {% if photo and ("about/" + photo) | srcExists %}
+  <figure class="about-photo">
+    {% image "about/" + photo, "Melanie Dickinson", "(min-width: 800px) 46vw, 92vw", { eager: true } %}
+  </figure>
+  {% else %}
+  <div class="about-photo-placeholder" aria-hidden="true">Your photo</div>
+  {% endif %}
+
+  <div class="about-copy">
+    <h1 class="page-title">{{ title }}</h1>
+    <div class="about-text">{{ content | safe }}</div>
+    <span class="contact-label" id="contact">Contact</span>
+    <ul class="contact-list">
+      {% for c in contact %}<li><a href="{{ c.url }}">{{ c.label }}</a></li>{% endfor %}
+    </ul>
+  </div>
+</div>

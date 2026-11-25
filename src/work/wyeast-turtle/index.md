@@ -1,7 +1,7 @@
 ---
 title: "Wy'east Turtle"
-year:
-materials:
+year: 2025
+materials: Concrete, papercrete, stabilized eart, urbanite, rebar
 dimensions:
 section: large
 order: 22

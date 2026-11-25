@@ -1,7 +1,7 @@
 ---
 title: "Bone Spoon"
-year:
-materials:
+year: 2015
+materials: Walnut
 dimensions:
 section: main
 order: 18

@@ -1,7 +1,7 @@
 ---
 title: "Spiderweb"
-year:
-materials:
+year: 2024
+materials: Maple
 dimensions:
 section: main
 order: 11
@@ -11,4 +11,4 @@ media:
   - spiderweb.jpg
 ---
 
-A few sentences about this piece go here.
+

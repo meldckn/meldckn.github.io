@@ -1,7 +1,7 @@
 ---
 title: "Wood Rabbit"
-year:
-materials:
+year: 2020
+materials: Maple
 dimensions:
 section: main
 order: 15

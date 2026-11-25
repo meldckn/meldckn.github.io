@@ -2,46 +2,55 @@
 layout: base.njk
 bodyClass: page-piece
 ---
-{%- set all = collections.pieces -%}
+{%- set all = collections.piecePages -%}
 {%- set idx = -1 -%}
 {%- for p in all %}{% if p.url == page.url %}{% set idx = loop.index0 %}{% endif %}{% endfor -%}
 {%- set prev = all[idx - 1] if idx > 0 else null -%}
 {%- set next = all[idx + 1] if idx < all.length - 1 else null -%}
+{%- set hasVideo = false -%}
+{%- for file in media %}{% if file | isVideo %}{% set hasVideo = true %}{% endif %}{% endfor -%}
 
 <article class="piece">
-  <div class="piece-info">
-    <a class="back-link" href="/">&larr; All work</a>
-    <h1 class="piece-title">{{ title }}</h1>
-    {% if year or materials or dimensions %}
-    <dl class="piece-meta">
-      {% if year %}<div><dt>Year</dt><dd>{{ year }}</dd></div>{% endif %}
-      {% if materials %}<div><dt>Materials</dt><dd>{{ materials }}</dd></div>{% endif %}
-      {% if dimensions %}<div><dt>Size</dt><dd>{{ dimensions }}</dd></div>{% endif %}
-    </dl>
-    {% endif %}
-    <div class="piece-text">{{ content | safe }}</div>
+  <div class="piece-top">
+    <figure class="piece-hero">
+      <button class="hero-btn" type="button" data-full="{% imageFull dir + '/' + cover %}" aria-label="View {{ title }} larger">
+        {% image dir + "/" + cover, title, "(min-width: 900px) 64vw, 92vw", { style: "view-transition-name: piece-" + slug, eager: true } %}
+      </button>
+    </figure>
+
+    <div class="piece-info">
+      <a class="back-link" href="/">&larr; All work</a>
+      <h1 class="piece-title">{{ title }}</h1>
+      <div class="piece-text">{{ content | safe }}</div>
+      <dl class="piece-meta">
+        <div><dt>Year</dt><dd>{{ year or "—" }}</dd></div>
+        <div><dt>Materials</dt><dd>{{ materials or "—" }}</dd></div>
+        <div><dt>Size</dt><dd>{{ dimensions or "—" }}</dd></div>
+      </dl>
+    </div>
   </div>
 
-  <div class="piece-media">
-    <figure class="media-item">
-      <button class="zoom" type="button" data-full="{% imageFull dir + '/' + cover %}" aria-label="View {{ title }} larger">
-        {% image dir + "/" + cover, title, "(min-width: 960px) 62vw, 92vw", { style: "view-transition-name: piece-" + slug, eager: true } %}
-      </button>
-    </figure>
-    {% for file in media %}
-    <figure class="media-item">
+  {% if media.length %}
+  <section class="rail-wrap" aria-label="Photos{{ ' and video' if hasVideo }}">
+    <button class="rail-btn rail-prev" type="button" data-dir="-1" aria-label="Scroll back" hidden>&larr;</button>
+    <button class="rail-btn rail-next" type="button" data-dir="1" aria-label="Scroll forward" hidden>&rarr;</button>
+    <div class="rail" tabindex="0">
+      {% for file in media %}
       {% if file | isVideo %}
-      <video controls playsinline preload="metadata" poster="/{{ dir }}/{{ file | posterFor }}">
-        <source src="/{{ dir }}/{{ file }}" type="video/mp4">
-      </video>
+      <button class="rail-item is-video" type="button"
+        data-video="/{{ dir }}/{{ file }}" data-poster="/{{ dir }}/{{ file | posterFor }}" aria-label="Play video of {{ title }}">
+        <img src="/{{ dir }}/{{ file | posterFor }}" alt="" loading="lazy" decoding="async">
+        <span class="play" aria-hidden="true"></span>
+      </button>
       {% else %}
-      <button class="zoom" type="button" data-full="{% imageFull dir + '/' + file %}" aria-label="View photo {{ loop.index + 1 }} of {{ title }} larger">
-        {% image dir + "/" + file, title + ", photo " + (loop.index + 1), "(min-width: 960px) 62vw, 92vw" %}
+      <button class="rail-item" type="button" data-full="{% imageFull dir + '/' + file %}" aria-label="View photo {{ loop.index + 1 }} of {{ title }}">
+        {% image dir + "/" + file, title + ", photo " + (loop.index + 1), "(min-width: 640px) 560px, 80vw" %}
       </button>
       {% endif %}
-    </figure>
-    {% endfor %}
-  </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
 </article>
 
 <nav class="piece-nav" aria-label="More work">
@@ -49,7 +58,10 @@ bodyClass: page-piece
   {% if next %}<a class="next" href="{{ next.url }}"><span>Next</span>{{ next.data.title }}</a>{% endif %}
 </nav>
 
-<dialog class="lightbox" aria-label="Enlarged photo">
-  <img alt="">
+<dialog class="lightbox" aria-label="Photo viewer">
+  <div class="lightbox-stage"></div>
+  <button class="lightbox-btn lightbox-prev" type="button" aria-label="Previous photo">&larr;</button>
+  <button class="lightbox-btn lightbox-next" type="button" aria-label="Next photo">&rarr;</button>
+  <span class="lightbox-count" aria-live="polite"></span>
   <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
 </dialog>

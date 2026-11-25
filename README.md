@@ -17,8 +17,8 @@ npm start        # http://localhost:8080, rebuilds as you edit
 | --- | --- |
 | Each piece (photos, videos, text) | `src/work/<slug>/` |
 | Piece text, title, year, order | `src/work/<slug>/index.md` |
-| About / contact page | `src/about.md` |
-| Section headings ("Large Sculptures") | `src/_data/site.json` |
+| About page (text, photo, contact links) | `src/about/index.md` (put your photo in `src/about/`) |
+| Section headings ("Play Sculptures") | `src/_data/site.json` |
 | Styles / small scripts | `src/assets/style.css`, `src/assets/site.js` |
 | Page templates | `src/_includes/` |
 
@@ -30,7 +30,7 @@ title: "Drip II"
 year: 2024
 materials: Basswood
 dimensions: 20 × 15 × 6 cm
-section: main        # main, or large for Large Sculptures
+section: main        # main, or large for Play Sculptures
 order: 14            # position in the gallery
 cover: cover.jpg     # photo used in the gallery and at the top of the page
 media:               # the rest of the page, in order (photos or .mp4 videos)
@@ -42,7 +42,7 @@ hidden: false        # true hides it from the site
 Text about the piece, in Markdown.
 ```
 
-Empty fields (`year:` etc.) are simply not shown.
+Empty fields (`year:` etc.) show as a dash.
 
 ## Adding or updating photos
 

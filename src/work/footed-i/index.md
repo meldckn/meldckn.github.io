@@ -1,14 +1,12 @@
 ---
-title: "Footed Bowl"
-year:
-materials:
+title: "Footed I"
+year: 2021
+materials: Walnut
 dimensions:
 section: main
 order: 19
 cover: cover.jpg
 media:
-  - footed1-2.jpg
-  - footed1.jpg
   - footed2.jpg
 ---
 

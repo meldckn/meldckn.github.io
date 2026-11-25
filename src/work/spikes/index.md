@@ -1,7 +1,7 @@
 ---
 title: "Spikes"
-year:
-materials:
+year: 2020
+materials: Maple
 dimensions:
 section: main
 order: 7

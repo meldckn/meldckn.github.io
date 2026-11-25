@@ -1,7 +1,7 @@
 ---
 title: "Drip II"
-year:
-materials:
+year: 2021
+materials: Maple
 dimensions:
 section: main
 order: 14

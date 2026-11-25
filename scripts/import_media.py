@@ -36,6 +36,7 @@ PIECES = [
     ("fingerprint-iv", "Fingerprint IV", "main", "fingerpint4", []),
     ("a-study-of-eyes", "A Study of Eyes", "main", "astudyofeyes", ["eyes-"]),
     ("spikes", "Spikes", "main", "spikes", []),
+    # Gallery-only card that links to fingerprint-iv (see its index.md).
     ("fingerprint-iv-panel", "Fingerprint IV", "main", "fingerprint4-2", []),
     ("fingerprint-iii", "Fingerprint III", "main", "fingerprint3", ["fingerprint3-"]),
     ("wave", "Wave", "main", "wave", []),
@@ -47,7 +48,8 @@ PIECES = [
     ("carrot", "Carrot", "main", "carrot", []),
     ("crow", "Crow", "main", "crow", []),
     ("bone-spoon", "Bone Spoon", "main", "bonespoon", ["bonespoon-"]),
-    ("footed-bowl", "Footed Bowl", "main", "footed1-3", ["footed"]),
+    ("footed-i", "Footed I", "main", "footed1-3", ["footed2"]),
+    ("footed-ii", "Footed II", "main", "footed1-2", ["footed1."]),
     ("cully-turtle", "Cully Turtle", "large", "cullyturtle-repaint",
      ["cullyturtle-repaint", "cullytortoise-"]),
     ("cully-turtle-original-paint", "Cully Turtle (original paint)", "large",
@@ -115,7 +117,8 @@ def main():
         sys.exit(f"Media folder not found: {MEDIA}")
     used = set()
     for order, (slug, title, section, cover_stem, prefixes) in enumerate(PIECES, 1):
-        cover = find(MEDIA, cover_stem)
+        # Covers normally come from Main Gallery, but may live in Subpages.
+        cover = find(MEDIA, cover_stem) or find(SUB, cover_stem)
         if not cover:
             print(f"! {slug}: cover '{cover_stem}' not in Main Gallery, skipped")
             continue

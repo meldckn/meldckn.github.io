@@ -6,7 +6,8 @@ dimensions:
 section: main
 order: 5
 cover: cover.jpg
-media: []
+media:
+  - panel.jpg
 ---
 
 A few sentences about this piece go here.

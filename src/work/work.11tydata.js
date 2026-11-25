@@ -5,7 +5,8 @@ export default {
   media: [],
   eleventyComputed: {
     slug: (data) => data.page.filePathStem.split("/").at(-2),
-    permalink: (data) => `/work/${data.page.filePathStem.split("/").at(-2)}/`,
+    // Gallery-only cards (linkTo: <slug>) get no page of their own.
+    permalink: (data) => data.linkTo ? false : `/work/${data.page.filePathStem.split("/").at(-2)}/`,
     dir: (data) => `work/${data.page.filePathStem.split("/").at(-2)}`,
   },
 };

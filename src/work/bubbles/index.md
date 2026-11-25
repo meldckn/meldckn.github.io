@@ -1,7 +1,7 @@
 ---
 title: "Bubbles"
-year:
-materials:
+year: 2025
+materials: Concrete, papercrete, recycled metal and plastic stool, flower pot, recycled insulation foam
 dimensions:
 section: large
 order: 24
@@ -15,5 +15,3 @@ media:
   - bubbles-10.jpg
   - bubbles-video.mp4
 ---
-
-A few sentences about this piece go here.
